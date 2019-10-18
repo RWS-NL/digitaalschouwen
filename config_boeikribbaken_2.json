@@ -1,0 +1,39 @@
+{
+    "model" : {
+
+        "backend":              "Full Yolo",
+        "input_size":           416,
+        "anchors":              [0.31,1.84, 0.31,0.37, 0.51,0.67, 0.53,4.16, 0.88,1.99],
+        "max_box_per_image":    10,
+        "labels":               ["boei", "kribbaken"]
+
+    },
+
+    "train": {
+        "train_image_folder":   "/computer-vision/boeiendetectie/beelden_annotaties/boeien/",
+        "train_annot_folder":   "/computer-vision/boeiendetectie/beelden_annotaties/trainset_boeienkribbakens_an/",
+
+        "train_times":          5,
+        "pretrained_weights":   "",
+        "batch_size":           8,
+        "learning_rate":        1e-4,
+        "nb_epochs":            58,
+        "warmup_epochs":        2,
+
+        "object_scale":         11,
+        "no_object_scale":      6,
+        "coord_scale":          10.0,
+        "class_scale":          1.0,
+
+        "saved_weights_name":   "model_boeikribbaken_2.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "/computer-vision/Amsterdam/boeiendetectie/beelden_annotaties/boeien/",
+        "valid_annot_folder":   "/computer-vision/Amsterdam/boeiendetectie/beelden_annotaties/testset_boeienkribbakens_an/",
+
+        "valid_times":          1
+    }
+}
+
